@@ -1,0 +1,98 @@
+/* Animation d'apparition */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Menu styles */
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #333;
+    color: white;
+    width: 50px; /* Menu réduit */
+    height: 100%;
+    transition: width 0.3s;
+    z-index: 1000; /* Gérer les couches pour éviter que le menu gêne */
+}
+
+.menu-content {
+    display: none;
+    padding: 10px;
+    background-color: #333;
+}
+
+.menu.open {
+    width: 250px; /* Menu élargi */
+}
+
+.menu.open .menu-content {
+    display: block;
+}
+
+.menu-toggle {
+    background-color: #444;
+    border: none;
+    color: white;
+    font-size: 24px;
+    padding: 10px;
+}
+
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.menu ul li {
+    padding: 10px 0;
+}
+
+.menu ul li a.menu-link {
+    color: white;
+    text-decoration: none;
+    font-weight: bold; /* Mettre les titres du menu déroulant en gras */
+}
+
+/* Content styles */
+.content {
+    margin-left: 60px; /* Espace pour éviter le chevauchement du menu */
+    padding: 20px;
+    transition: margin-left 0.3s;
+}
+
+.menu.open ~ .content {
+    margin-left: 260px; /* Quand le menu est ouvert */
+}
+
+/* Text styles */
+h1, h2, p {
+    margin: 20px 0;
+    font-family: Arial, sans-serif;
+}
+
+h1, h2 {
+    font-weight: bold; /* S'assurer que les titres sont en gras */
+}
+
+strong {
+    font-weight: bold;
+}
+
+footer {
+    text-align: center;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
